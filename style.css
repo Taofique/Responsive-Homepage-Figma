@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* setting css varibles for the color, setting them in the root gives us acess to use it all over the code */
+
+:root {
+  --orange-color: #da722c;
+  --dark-blue-color: #023047;
+  --dark-color: #023047;
+  --light-color: #e8f7fb;
+  --light-blue-color: #6f7dfb;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Now I style the wrapper, we are using this to add maximum width to our elements , cause all of the parts were on maximum width*/
+
+.wrapper {
+  max-width: 1134px;
+  margin: 0 auto;
+}
+
+/* my buttons are all anchor tags they are inline elements by default, creates problems so fixing it to inline-block*/
+.btn {
+  padding: 16px 32px;
+  border-radius: 24px;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+}
+
+/* btn.dark no spaces between the two classes , we are specifically targetting the btn class with dark class in it. cause we will have theses two clsses in the same element */
+
+.btn.dark {
+  background-color: var(--dark-blue-color);
+}
+
+.btn.light {
+  background-color: var(--orange-color);
+}
+
+/* using before selector to set the icon on the button, the icon needs to be centered vertically, to do that I need to position the before selector/ basically the image,  "relative" to the btn* to do that set the button position to relative and set the before selector positon to "absolute" */
+.btn.enrol-icon::before {
+  content: url("images/enrol-now-icon.svg");
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  transform: translateY(-50%);
+}
+
+.btn.enrol-icon {
+  padding-left: 60px;
+}
+
+/* Header styling start */
+
+header {
+  background: linear-gradient(180deg, #6f7dfb 0%, #26308c 100%);
+  /* setting 100% of the veiwport window or vh= viewport height */
+  height: 100vh;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 1134px;
+  top: 36px;
+  z-index: 100;
+}
+
+/* if i use space between classes then that means i am targetting all the elements with logo class. */
+nav .logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+
+  /* identical to box height */
+  color: #ffffff;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+}
+
+nav ul li a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  /* identical to box height */
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Hero section */
+
+.hero-section {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 60px;
+}
+
+/* Hero section left */
+
+.hero-section .left {
+  width: 457px;
+}
+
+.hero-section .left h1 {
+  /* Learn the art of Game Dev */
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.hero-section .left p {
+  /* This is a comprehensive course on Game Development. You will learn everything from generating an idea to publishing your games to different platforms. */
+  /* This is a comprehensive course on Game Development. You will learn everything from generating an idea to publishing your games to different platforms. */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* achieverment cards , we need to position this cards relative to the hero section*/
+
+.achievement-card {
+  position: absolute;
+}
+
+.achievement-card .content {
+  border-radius: 24px;
+  background-color: #fff;
+  padding: 8px 32px;
+}
+
+.achievement-card.students-enrolled {
+  left: 47%;
+  top: 380px;
+}
+
+.achievement-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  color: var(--dark-blue-color);
+  margin: 0;
+  text-align: center;
+}
+
+.achievement-card p {
+  /* Students Enrolled */
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: var(--dark-blue-color);
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+/* hero section right */
+
+.hero-section .right {
+  align-self: flex-end;
+}
+
+.hero-section .right img {
+  height: 520px;
+  vertical-align: middle;
+}
